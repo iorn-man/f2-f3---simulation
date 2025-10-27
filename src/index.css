@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Racing Red Theme */
+    --background: 0 0% 7%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Racing Red Primary */
+    --primary: 0 93% 44%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Metallic Silver Secondary */
+    --secondary: 0 0% 65%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 93% 44%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 93% 44%;
+
+    --radius: 0.5rem;
+
+    /* Racing Gradients */
+    --gradient-racing: linear-gradient(135deg, hsl(0, 93%, 44%) 0%, hsl(0, 93%, 35%) 100%);
+    --gradient-metal: linear-gradient(135deg, hsl(0, 0%, 65%) 0%, hsl(0, 0%, 45%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(0, 0%, 10%) 0%, hsl(0, 0%, 5%) 100%);
+    
+    /* Racing Shadows */
+    --shadow-racing: 0 10px 40px -10px hsl(0 93% 44% / 0.4);
+    --shadow-glow: 0 0 30px hsl(0 93% 44% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .racing-gradient {
+    background: var(--gradient-racing);
+  }
+  
+  .metal-gradient {
+    background: var(--gradient-metal);
+  }
+  
+  .racing-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .carbon-fiber {
+    background-image: 
+      linear-gradient(45deg, hsl(0, 0%, 10%) 25%, transparent 25%),
+      linear-gradient(-45deg, hsl(0, 0%, 10%) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, hsl(0, 0%, 10%) 75%),
+      linear-gradient(-45deg, transparent 75%, hsl(0, 0%, 10%) 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  }
+}
